@@ -1,0 +1,8 @@
+numpy
+matplotlib
+pandas
+seaborn
+scikit-learn
+joblib
+google-colab
+kaggle 
