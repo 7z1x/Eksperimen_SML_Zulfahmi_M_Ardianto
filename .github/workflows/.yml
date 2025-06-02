@@ -1,0 +1,32 @@
+name: Auto Preprocessing
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  preprocess:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install Dependencies
+      run: |
+        pip install -U pip
+        pip install pandas numpy scikit-learn joblib
+
+    - name: Run Preprocessing Script
+      run: python preprocessing/automate_Zulfahmi_M_Ardianto.py
+
+    - name: Upload Preprocessed Output
+      uses: actions/upload-artifact@v4
+      with:
+        name: preprocessed-dataset
+        path: preprocessing/breast_cancer_dataset_preprocessed/
