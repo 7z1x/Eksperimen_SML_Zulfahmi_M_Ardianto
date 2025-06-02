@@ -12,7 +12,7 @@ def preprocess_data(test_size=0.2, random_state=42):
     try:
         base_dir = os.path.dirname(os.path.abspath(__file__))
 
-        data_path = os.path.join(base_dir, "..", "breast_cancer_dataset", "data.csv")
+        data_path = os.path.join(base_dir, "..", "breast_cancer_dataset_raw", "data.csv")
         data_path = os.path.abspath(data_path) 
 
         df = pd.read_csv(data_path)
